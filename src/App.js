@@ -7,15 +7,28 @@ import { IconCircleCheck, IconCircleDashed } from '@tabler/icons-react';
 
 const storeItems = [
   {
-    name: "Televizyon",
+    name: "Saat",
+    src: "1",
     price: 20000
   },
   {
-    name: "Robot Süpürge",
+    name: "Retro Kamera",
+    src: "2",
     price: 10000
   },
   {
-    name: "Laptop",
+    name: "Oyuncak Araba",
+    src: "3",
+    price: 30000
+  },
+  {
+    name: "Nikon Kamera",
+    src: "4",
+    price: 30000
+  },
+  {
+    name: "Kulaklık",
+    src: "5",
     price: 30000
   }
 ];
@@ -30,11 +43,12 @@ function App() {
     <Container>
       <SimpleGrid cols={3} className='Store'>
         {
-          storeItems.map(({ name, price }, index) => {
+          storeItems.map(({ name, price, src }, index) => {
             return (
               <CardComponent
                 name={name}
                 price={price}
+                src={src}
                 key={index}
                 onAdd={() => setBasketItems([...basketItems, { name }])}
               />
